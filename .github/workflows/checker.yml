@@ -1,0 +1,18 @@
+on:
+  - push
+
+jobs:
+  check:
+    runs-on: ${{ matrix.os }}
+    continue-on-error: true
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Linux Files
+        run: ./scripts/create.sh
+        if: matrix.os == 'ubuntu-latest'
+      - name: Windows Files
+        run: ./scripts/create.bat
+        if: matrix.os == 'windows-latest'
