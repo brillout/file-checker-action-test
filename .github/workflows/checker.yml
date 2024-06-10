@@ -1,4 +1,3 @@
-name: FS Checker
 on:
   - push
 
