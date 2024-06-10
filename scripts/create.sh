@@ -8,3 +8,4 @@ touch {id}.js
 touch (id).js
 touch `id`.js
 touch <id>.js
+touch !id.js
